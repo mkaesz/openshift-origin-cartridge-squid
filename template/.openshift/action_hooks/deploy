@@ -1,0 +1,1 @@
+cp ${OPENSHIFT_REPO_DIR}configuration/* ${OPENSHIFT_SQUID_DIR}configuration

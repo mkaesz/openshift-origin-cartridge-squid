@@ -1,0 +1,25 @@
+Name: squid
+Cartridge-Short-Name: SQUID
+Cartridge-Version: 1.0.0
+Cartridge-Vendor: msk
+Display-Name: Squid
+Description: "Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more."
+Version: 3.1.10
+Licence: GPLv2
+Categories:
+        - web_framework
+        - service
+Website: http://squid-cache.org
+Provides:
+        - squid
+Scaling:
+        Min: 1
+        Max: 1
+Endpoints:
+- Private-IP-Name: IP
+  Private-Port-Name: HTTP_PORT
+  Private-Port: 8080
+  Public-Port-Name: HTTP_PROXY_PORT
+  Mappings:
+  - Frontend: ''
+    Backend: ''

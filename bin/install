@@ -1,0 +1,14 @@
+#!/bin/bash
+set -x
+
+echo "$version" > ${OPENSHIFT_SQUID_DIR}env/OPENSHIFT_SQUID_VERSION
+
+mkdir -p ${OPENSHIFT_SQUID_DIR}{var/logs,cache,run,configuration}
+
+ln -s /usr/share/squid/errors/ errors
+ln -s /usr/share/squid/icons/ icons
+
+cp ${OPENSHIFT_SQUID_DIR}template/configuration/squid.conf ${OPENSHIFT_SQUID_DIR}configuration/squid.conf
+cp ${OPENSHIFT_SQUID_DIR}template/configuration/mime.conf ${OPENSHIFT_SQUID_DIR}configuration/mime.conf
+
+touch ${OPENSHIFT_SQUID_DIR}run/squid.pid
